@@ -9,6 +9,7 @@ import org.jenkinsci.plugins.workflow.job.*;
 
 import javax.annotation.*;
 import java.io.*;
+import java.nio.charset.*;
 import java.nio.file.*;
 import java.util.*;
 import java.util.stream.*;
@@ -27,7 +28,8 @@ public class DeployStatistics implements RunAction2 {
     }
 
     private String readDeploymentHistory() throws IOException {
-        return new String(Files.readAllBytes(project.getRootDir().toPath().resolve("../../workspace/"+project.getName()+"/output.json")));
+        return new String(Files.readAllBytes(project.getRootDir().toPath().resolve("../../workspace/"+project.getName()+"/output.json")),
+                Charset.defaultCharset());
     }
 
     @CheckForNull
