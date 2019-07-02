@@ -1,0 +1,43 @@
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:l="/lib/layout">
+    <l:layout title="Deployment History">
+        <l:main-panel>
+            <h1>
+                Deployment History
+            </h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="1"></th>
+                        <th colspan="3">Previous</th>
+                        <th colspan="3">Current</th>
+                    </tr>
+                    <tr>
+                        <th>Country</th>
+                        <th>Version</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                        <th>Version</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <j:forEach var="countryDeployment" items="${it.countryDeploymentStats}">
+                    <tr>
+                        <td>${countryDeployment.country}</td>
+                        <td>${countryDeployment.previousArtifactVersion}</td>
+                        <td>${countryDeployment.previousDeploymentDate}</td>
+                        <td>${countryDeployment.previousDeploymentStatus}</td>
+
+                        <td>${countryDeployment.currentArtifactVersion}</td>
+                        <td>${countryDeployment.currentDeploymentDate}</td>
+                        <td>${countryDeployment.currentDeploymentStatus}</td>
+                    </tr>
+                </j:forEach>
+                </tbody>
+            </table>
+
+        </l:main-panel>
+    </l:layout>
+</j:jelly>
