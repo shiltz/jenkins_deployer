@@ -10,15 +10,15 @@ public class CountryDeploymentStats {
     private String country;
 
     public String getPreviousArtifactVersion() {
-        return previousArtifactVersion;
+        return previousArtifactVersion != null ? previousArtifactVersion : "-";
     }
 
     public String getCurrentArtifactVersion() {
-        return currentArtifactVersion;
+        return currentArtifactVersion != null ? currentArtifactVersion : "-";
     }
 
     public String getCountry() {
-        return country;
+        return country != null ? country : "-";
     }
 
     public void setPreviousArtifactVersion(String previousArtifactVersion) {
@@ -35,7 +35,7 @@ public class CountryDeploymentStats {
 
 
     public String getPreviousDeploymentStatus() {
-        return previousDeploymentStatus;
+        return previousDeploymentStatus != null ? previousDeploymentStatus : "-";
     }
 
     public void setPreviousDeploymentStatus(String previousDeploymentStatus) {
@@ -43,7 +43,7 @@ public class CountryDeploymentStats {
     }
 
     public String getPreviousDeploymentDate() {
-        return previousDeploymentDate;
+        return previousDeploymentDate != null ? previousDeploymentDate : "-";
     }
 
     public void setPreviousDeploymentDate(String previousDeploymentDate) {
@@ -51,7 +51,7 @@ public class CountryDeploymentStats {
     }
 
     public String getCurrentDeploymentDate() {
-        return currentDeploymentDate;
+        return currentDeploymentDate != null ? currentDeploymentDate : "-";
     }
 
     public void setCurrentDeploymentDate(String currentDeploymentDate) {
@@ -59,7 +59,7 @@ public class CountryDeploymentStats {
     }
 
     public String getCurrentDeploymentStatus() {
-        return currentDeploymentStatus;
+        return currentDeploymentStatus != null ? currentDeploymentStatus : "-";
     }
 
     public void setCurrentDeploymentStatus(String currentDeploymentStatus) {
